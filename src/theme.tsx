@@ -2,8 +2,47 @@ import {createTheme} from "@mui/material/styles";
 import createPalette from "@mui/material/styles/createPalette";
 
 
+function darkScrollbar(options = { track: '#212121', thumb: '#616161', active: '#bdbdbd' }) {
+    return {
+        scrollbarColor: `${options.thumb} ${options.track}`,
+        '&::-webkit-scrollbar, & *::-webkit-scrollbar': {            
+            backgroundColor: options.track, 
+            maxWidth: 12,
+            maxHeight: 12
+        },
+        '&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb': {
+            borderRadius: 6,
+            backgroundColor: options.thumb,
+            minHeight: 24,            
+            border: `3px solid ${options.track}`
+        },
+        '&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus': {
+            backgroundColor: options.active
+        },
+        '&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active': {
+            backgroundColor: options.active
+        },
+        '&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover': {
+            backgroundColor: options.active
+        },
+        '&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner': {
+            backgroundColor: options.track
+        }
+    };
+}
+
+
 export const appTheme = createTheme({
+    components: {
+        MuiCssBaseline: {
+            styleOverrides: {
+                body: darkScrollbar() 
+            }
+        }
+    }, 
+    
     palette: createPalette({
+        mode: "dark",
         common: {
             black: "#000",
             white: "#fff"

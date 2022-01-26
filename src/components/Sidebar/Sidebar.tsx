@@ -113,7 +113,7 @@ function Sidebar() {
             <Box>
                 <ListItemButton
                     sx={{
-                        margin: "4px 4px 8px 4px",
+                        margin: "8px 4px 8px 4px",
                         padding: 0,
                         borderRadius: "6px",
                         maxHeight: "56px"

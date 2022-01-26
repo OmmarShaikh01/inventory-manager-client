@@ -8,7 +8,7 @@ import Sales from './components/Sales';
 import CustomerInfo from './components/CustomerInfo';
 import Account from './components/Account';
 import Settings from './components/Settings';
-import Sidebar from './components/Sidebar/Sidebar';
+import Sidebar from './components/Sidebar';
 
 
 function App() {
